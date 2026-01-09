@@ -21,7 +21,7 @@ export default function AllBooks() {
       {/*Display filtered books*/}
       <h1 className='font-semibold text-2xl text-center my-5'>Kitoblar</h1> 
       
-      <div className='w-fit m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-5'>
+      <div className='w-fit m-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-5'>
         {
           filteredBooks.map((book) => (
             <Link to={`/product/${book.id}`}>
