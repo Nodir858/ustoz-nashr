@@ -35,10 +35,10 @@ export default function Cart() {
           products.length === 0 ?(
             <h1>Your cart has no product</h1>
           ) : (
-            <div className='flex gap-6'>
+            <div className='flex flex-col gap-y-5 lg:flex-row lg:gap-x-5'>
             {/*left products*/}
-              <div className='w-2/3'>
-                <div className='min-h-[400px] bg-white p-6 rounded-[10px] flex flex-col gap-3'>
+              <div className='md:w-2/3'>
+                <div className='min-h-[400px] bg-white p-6 rounded-[10px] flex flex-col '>
                   {
                     cart.map((product) => (
                     <div className='flex justify-between items-center gap-4 border border-gray-400 rounded-lg p-3'>
@@ -51,7 +51,7 @@ export default function Cart() {
                             </div>
                           </div>
                           <div className='flex justify-between items-center w-[120px] p-1 rounded-md'>
-                              <button className='border-1 p-1 rounded-lg cursor-pointer'
+                              <button className='border p-1 rounded-lg cursor-pointer'
                                   onClick={() => 
                                     decreaseQuantity(product.id)
                                   }
@@ -59,7 +59,7 @@ export default function Cart() {
                                   <FaMinus />
                               </button>
                                   <span className='text-xl'>{product.quantity || 1}</span>
-                              <button className='border-1 p-1 rounded-lg cursor-pointer'
+                              <button className='border p-1 rounded-lg cursor-pointer'
                                   onClick={() => 
                                     updateQuantity(product.id, +1)
                                   }
@@ -75,7 +75,7 @@ export default function Cart() {
                 </div>
               </div>
             {/*right summary*/}
-              <div className='w-1/3 bg-white p-7 rounded-xl h-full'>
+              <div className='md:w-1/3 bg-white p-7 rounded-xl'>
                           <h2 className='font-semibold text-xl'>Umumiy buyurtma</h2>
                             <hr className='mt-5 text-gray-400'/>
                               <div className='flex justify-between items-center mt-5'>
